@@ -60,6 +60,39 @@ header nav ul li a.active {
     font-weight: bold;
 }
 
+header #alert {
+    display: none;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    color: #3176ac;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+header #alert:after {
+    content: "\f00d";
+    font-family: "Font Awesome 5 Free", serif;
+    float: right;
+    font-size: 1.2rem;
+}
+
+header #alert.info {
+    display: block;
+}
+
+header #alert.error {
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+header #alert.success {
+    display: block;
+    background-color: #d4edda;
+    color: #155724;
+}
+
 #container {
     width: 50%;
     min-height: 100vh;
