@@ -1,0 +1,197 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    background-image: linear-gradient(to bottom, #194579, #3176ac);
+}
+
+header {
+    background-color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header img.logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+header p.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+header nav {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 1rem;
+    padding: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+header nav ul li a:hover {
+    color: white;
+    background-color: #3176ac;
+}
+
+header nav ul li a.active {
+    font-weight: bold;
+}
+
+#container {
+    width: 50%;
+    min-height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+.wrapper {
+    padding: 0 4rem;
+}
+
+#search-bar input {
+    width: 70%;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+#weather-info {
+    margin-bottom: 3rem;
+}
+
+#weather-info h1 {
+    color: #3176ac;
+    font-size: 4rem;
+    text-shadow: 4px 3px 0 #ccc;
+}
+
+#weather-info h2 {
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+
+#weather-info h4 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    font-weight: normal;
+}
+
+#weather-details {
+    width: 100%;
+}
+
+#weather-details tr td:nth-child(odd) {
+    padding-left: 1rem;
+    border-left: 1px solid #ccc;
+}
+
+#weather-details tr td:nth-child(even) {
+    text-align: left;
+}
+
+#weather-details tr td:first-child {
+    border-left: none;
+}
+
+#weather-details tr td img {
+    height: 30px;
+}
+
+#weather-details tr td span {
+    color: #aaa;
+}
+
+#contact-me {
+    line-height: 1.5rem;
+}
+
+form[name="contact-me"] input, form[name="contact-me"] textarea {
+    width: 50%;
+    padding: 1rem;
+    margin: 1rem auto;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: block;
+}
+
+form[name="contact-me"] textarea {
+    height: 8rem;
+}
+
+form[name="contact-me"] button {
+    padding: 1rem 2rem;
+    margin: 1rem auto;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: block;
+    background-color: #3176ac;
+    color: white;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 6rem;
+    padding: 1rem 0;
+    background-color: #f4f4f4;
+    color: #bbb;
+    font-size: 0.8rem;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+footer ul li a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
