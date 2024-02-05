@@ -56,13 +56,15 @@ document.addEventListener("DOMContentLoaded", async function() {
     const closeAlertButton = document.getElementById("alert");
     closeAlertButton.addEventListener("click", hideAlert);
 
-    // Get the user's location
-    let userLocation;
-    try {
-        userLocation = await getUserLocation();
-        displayAlert("Your location is: " + userLocation.latitude + ", " + userLocation.longitude, "success");
-    } catch (error) {
-        displayAlert("An error occurred while getting your location: " + error.message, "error");
+    // Get the user's location, if we're on the home page
+    if (document.getElementById("weather-info")) {
+        let userLocation;
+        try {
+            userLocation = await getUserLocation();
+            displayAlert("Your location is: " + userLocation.latitude + ", " + userLocation.longitude, "success");
+        } catch (error) {
+            displayAlert("An error occurred while getting your location: " + error.message, "error");
+        }
     }
 
     // TODO: Next step is to use the user's location to get the weather data
