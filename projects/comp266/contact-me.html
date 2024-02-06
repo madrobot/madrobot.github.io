@@ -5,7 +5,8 @@
     <link rel="icon" href="img/logo.png" type="image/png">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js" defer></script>
+    <script src="js/alert.js" defer></script>
+    <script src="js/contact-form.js" defer></script>
 </head>
 <body>
 <div id="container">
@@ -23,23 +24,23 @@
     </header>
     <div class="wrapper">
         <h1>Contact Me</h1>
-        <form name="contact-me">
+        <form id="contact-form" name="contact-me" action="https://formspree.io/f/mayredvz" method="POST">
             <label>
-                <input type="text" placeholder="Your Name">
+                <input type="text" name="name" placeholder="Your Name">
             </label>
             <label>
-                <input type="email" placeholder="Your Email">
+                <input type="email" name="email" placeholder="Your Email">
             </label>
             <label>
-                <textarea placeholder="Your Message"></textarea>
+                <textarea name="message" placeholder="Your Message"></textarea>
             </label>
             <button type="submit">Send</button>
         </form>
     </div>
     <footer>
         <ul>
-            <li><a href="https://openweathermap.org" target="_blank">Open Weather Map</a></li>
-            <li><a href="https://www.theweathernetwork.com" target="_blank">The Weather Network</a></li>
+            <li><a href="https://openweathermap.org" target="_blank" title="Open Weather Map Link">Open Weather Map</a></li>
+            <li><a href="https://www.theweathernetwork.com" target="_blank" title="The Weather Network Link">The Weather Network</a></li>
         </ul>
         <p>&copy;2024. <span>William Salem&eacute;.</span> All Rights Reserved.</p>
     </footer>

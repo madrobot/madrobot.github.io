@@ -1,3 +1,4 @@
+// Get the user's location using the Geolocation API
 async function getUserLocation() {
     return new Promise((resolve, reject) => {
         // Check if geolocation is available in the browser
@@ -32,41 +33,15 @@ async function getUserLocation() {
     });
 }
 
-function displayAlert(message, style) {
-    const alert = document.getElementById("alert");
-    alert.textContent = message;
-    alert.className = style;
-}
-
-function hideAlert() {
-    const alert = document.getElementById("alert");
-    alert.style.opacity = "1";
-    (function fade() {
-        if ((alert.style.opacity -= ".05") < 0) {
-            alert.style.display = "none";
-            alert.className = "";
-        } else {
-            requestAnimationFrame(fade);
-        }
-    })();
-}
-
+// Load the user's location and fetch the weather data
 document.addEventListener("DOMContentLoaded", async function() {
-    // Set up the event listener for the alert close button
-    const closeAlertButton = document.getElementById("alert");
-    closeAlertButton.addEventListener("click", hideAlert);
-
-    // Get the user's location, if we're on the home page
-    if (document.getElementById("weather-info")) {
-        let userLocation;
-        try {
-            userLocation = await getUserLocation();
-            displayAlert("Your location is: " + userLocation.latitude + ", " + userLocation.longitude, "success");
-        } catch (error) {
-            displayAlert("An error occurred while getting your location: " + error.message, "error");
-        }
+    let userLocation;
+    try {
+        userLocation = await getUserLocation();
+        displayAlert("Your location is: " + userLocation.latitude + ", " + userLocation.longitude, "success");
+    } catch (error) {
+        displayAlert("An error occurred while getting your location: " + error.message, "error");
     }
 
     // TODO: Next step is to use the user's location to get the weather data
 });
-
