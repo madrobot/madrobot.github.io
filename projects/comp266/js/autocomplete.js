@@ -33,7 +33,13 @@ function initAutocomplete() {
         }
 
         // TODO: Next step is to use the user's location to get the weather data
-        displayAlert("You selected " + city + ", " + state + ", " + country + " as your location.", "info");
+        const locationQuery = [
+            city,
+            state,
+            country
+        ].filter(Boolean).join(", ");
+
+        displayAlert("You selected " + locationQuery + " as your location.", "info");
     });
 }
 
