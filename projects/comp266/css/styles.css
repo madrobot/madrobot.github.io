@@ -94,7 +94,7 @@ header #alert.success {
 }
 
 #container {
-    width: 50%;
+    width: 55%;
     min-height: 100vh;
     margin: 0 auto;
     overflow: hidden;
@@ -117,52 +117,86 @@ header #alert.success {
     border-radius: 10px;
     font-size: 1.1rem;
     font-weight: bold;
+    text-align: center;
 }
 
-#weather-info {
+/* TODO */
+/*#city-weather {*/
+/*    display: none;*/
+/*}*/
+
+#city-weather #weather-info {
     margin-bottom: 3rem;
 }
 
-#weather-info h1 {
+#city-weather #weather-info span {
+    display: inline-block;
+    margin: 2.5rem 0 5px;
+    color: #aaa;
+}
+
+#city-weather #weather-info h1 {
     color: #3176ac;
     font-size: 4rem;
     text-shadow: 4px 3px 0 #ccc;
 }
 
-#weather-info h2 {
+#city-weather #weather-info h2 {
     font-size: 3rem;
-    margin-bottom: 5px;
+    margin: 0 0 5px;
 }
 
-#weather-info h4 {
+#city-weather #weather-info h4 {
     font-size: 1.2rem;
     margin-top: 0;
     font-weight: normal;
 }
 
-#weather-details {
+#city-weather #weather-details {
     width: 100%;
+    border-spacing: 0 20px;
 }
 
-#weather-details tr td:nth-child(odd) {
+#city-weather #weather-details tr td:nth-child(odd) {
     padding-left: 1rem;
     border-left: 1px solid #ccc;
 }
 
-#weather-details tr td:nth-child(even) {
+#city-weather #weather-details tr td:nth-child(even) {
     text-align: left;
 }
 
-#weather-details tr td:first-child {
+#city-weather #weather-details tr td:first-child {
     border-left: none;
 }
 
-#weather-details tr td img {
+#city-weather #weather-details tr td img {
     height: 30px;
 }
 
-#weather-details tr td span {
+#city-weather #weather-details tr td span {
+    display: block;
     color: #aaa;
+    margin-bottom: 5px;
+}
+
+#popular-cities {
+    margin-top: 3rem;
+}
+
+#popular-cities table {
+    margin: 0 auto;
+    text-align: left;
+    border-spacing: 20px;
+}
+
+#popular-cities table tr td img {
+    height: 40px;
+}
+
+#popular-cities table tr td:nth-child(3) {
+    color: #aaa;
+    font-weight: bold;
 }
 
 #contact-me {
@@ -226,5 +260,14 @@ footer ul li a {
 }
 
 footer ul li a:hover {
+    text-decoration: underline;
+}
+
+footer a.attribution {
+    color: #bbb;
+    text-decoration: none;
+}
+
+footer a.attribution:hover {
     text-decoration: underline;
 }

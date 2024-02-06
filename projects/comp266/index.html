@@ -5,13 +5,16 @@
     <link rel="icon" href="img/logo.png" type="image/png">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBmLy4hj7duOdtv9unVFLaaOEoGH_rNhlM&libraries=places"></script>
     <script src="js/alert.js" defer></script>
+    <script src="js/autocomplete.js"></script>
     <script src="js/location.js" defer></script>
 </head>
 <body>
 <div id="container">
     <header>
-        <img class="logo" src="img/logo.png" alt="Logo">
+        <img class="logo" src="img/logo.png" alt="Logo" title="Weather App logo with gradient blue background and an icon signifying partly cloud weather conditions">
         <p class="logo-text">Weather App</p>
         <nav>
             <ul>
@@ -23,45 +26,100 @@
         <div id="alert" title="Click to close"></div>
     </header>
     <div id="search-bar" class="wrapper">
-        <label>
-            <input type="text" placeholder="Search for a city...">
-        </label>
+        <form id="search-form" autocomplete="off">
+            <label>
+                <input id="search-input" type="text" placeholder="Search for a city..." autocomplete="off">
+            </label>
+        </form>
     </div>
-    <div id="weather-info" class="wrapper">
-        <h2>City Name</h2>
-        <h4>Sunday, February 4, 2024</h4>
-        <h1>5<sup>&deg;C</sup></h1>
+    <div id="city-weather">
+        <div id="weather-info" class="wrapper">
+            <span>Today's Weather</span>
+            <h2>City Name</h2>
+            <h4>Sunday, February 4, 2024</h4>
+            <h1>5<sup>&deg;C</sup></h1>
+        </div>
+        <table id="weather-details" class="wrapper">
+            <tr>
+                <td>
+                    <img src="img/conditions.png" alt="Conditions">
+                </td>
+                <td>
+                    <span>Conditions</span>
+                    Cloudy
+                </td>
+                <td>
+                    <img src="img/wind.png" alt="Wind Speed">
+                </td>
+                <td>
+                    <span>Wind Speed</span>
+                    15 <sup>km/h</sup>
+                </td>
+                <td>
+                    <img src="img/temperature.png" alt="Min/Max Temps">
+                </td>
+                <td>
+                    <span>Temperature Range</span>
+                    -9 <sup>&deg;C</sup> to 5 <sup>&deg;C</sup>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="img/visibility.png" alt="Conditions">
+                </td>
+                <td>
+                    <span>Visibility</span>
+                    100 <sup>km</sup>
+                </td>
+                <td>
+                    <img src="img/humidity.png" alt="Wind Speed">
+                </td>
+                <td>
+                    <span>Humidity</span>
+                    64 <sup>%</sup>
+                </td>
+                <td>
+                    <img src="img/pressure.png" alt="Min/Max Temps">
+                </td>
+                <td>
+                    <span>Pressure</span>
+                    1015 <sup>kPa</sup>
+                </td>
+            </tr>
+        </table>
     </div>
-    <table id="weather-details" class="wrapper">
-        <tr>
-            <td>
-                <img src="img/conditions.png" alt="Conditions">
-            </td>
-            <td>
-                Cloudy<br>
-                <span>Conditions</span>
-            </td>
-            <td>
-                <img src="img/wind.png" alt="Wind Speed">
-            </td>
-            <td>
-                15 km/h<br>
-                <span>Wind Speed</span>
-            </td>
-            <td>
-                <img src="img/temperature.png" alt="Min/Max Temps">
-            </td>
-            <td>
-                -9<sup>&deg;C</sup> to 5<sup>&deg;C</sup><br>
-                <span>Temperature Range</span>
-            </td>
-        </tr>
-    </table>
+    <div id="popular-cities">
+        <h3>Popular Cities</h3>
+        <table>
+            <tr>
+                <td><img src="img/paris.png" alt="Paris Icon"></td>
+                <td>Paris, France</td>
+                <td>11<sup>&deg;C</sup></td>
+            </tr>
+            <tr>
+                <td><img src="img/newyork.png" alt="New York Icon"></td>
+                <td>New York<span>, United States</span></td>
+                <td>12<sup>&deg;C</sup></td>
+            </tr>
+            <tr>
+                <td><img src="img/bangkok.png" alt="Bangkok Icon"></td>
+                <td>Bangkok<span>, Thailand</span></td>
+                <td>28<sup>&deg;C</sup></td>
+            </tr>
+            <tr>
+                <td><img src="img/london.png" alt="London Icon"></td>
+                <td>London<span>, England</span></td>
+                <td>21<sup>&deg;C</sup></td>
+            </tr>
+        </table>
+    </div>
     <footer>
         <ul>
-            <li><a href="https://openweathermap.org" target="_blank">Open Weather Map</a></li>
-            <li><a href="https://www.theweathernetwork.com" target="_blank">The Weather Network</a></li>
+            <li><a href="https://openweathermap.org" target="_blank" title="Open Weather Map Link">Open Weather Map</a></li>
+            <li><a href="https://www.theweathernetwork.com" target="_blank" title="The Weather Network Link">The Weather Network</a></li>
+            <li><a href="https://twitter.com/intent/tweet" target="_blank" title="Share Weather Updates to Twitter">Share Weather Update</a></li>
         </ul>
+        <p><a class="attribution" href="https://www.flaticon.com/free-icons/pressure" title="Freepik Icons Link">Icons created by Freepik - Flaticon</a></p>
         <p>&copy;2024. <span>William Salem&eacute;.</span> All Rights Reserved.</p>
     </footer>
 </div>
