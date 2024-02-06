@@ -120,16 +120,15 @@ header #alert.success {
     text-align: center;
 }
 
-/* TODO */
-/*#city-weather {*/
-/*    display: none;*/
-/*}*/
+#city-weather, #city-weather-loader {
+    display: none;
+}
 
 #city-weather #weather-info {
     margin-bottom: 3rem;
 }
 
-#city-weather #weather-info span {
+#city-weather #weather-info span.today-weather-tag {
     display: inline-block;
     margin: 2.5rem 0 5px;
     color: #aaa;
@@ -174,7 +173,7 @@ header #alert.success {
     height: 30px;
 }
 
-#city-weather #weather-details tr td span {
+#city-weather #weather-details tr td span.detail-type {
     display: block;
     color: #aaa;
     margin-bottom: 5px;

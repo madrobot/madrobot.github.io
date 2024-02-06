@@ -6,10 +6,14 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/loader.css">
     <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBmLy4hj7duOdtv9unVFLaaOEoGH_rNhlM&libraries=places"></script>
-    <script src="js/alert.js" defer></script>
     <script src="js/autocomplete.js"></script>
-    <script src="js/location.js" defer></script>
+    <script src="js/location.js"></script>
+    <script src="js/alert.js" defer></script>
+    <script src="js/data-updater.js" defer></script>
+    <script src="js/weather.js" defer></script>
+    <script src="js/popular-cities.js" defer></script>
 </head>
 <body>
 <div id="container">
@@ -32,12 +36,13 @@
             </label>
         </form>
     </div>
+    <div id="city-weather-loader" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
     <div id="city-weather">
         <div id="weather-info" class="wrapper">
-            <span>Today's Weather</span>
-            <h2>City Name</h2>
-            <h4>Sunday, February 4, 2024</h4>
-            <h1>5<sup>&deg;C</sup></h1>
+            <span class="today-weather-tag">Today's Weather</span>
+            <h2 id="city">&mdash;</h2>
+            <h4 id="date">&mdash;</h4>
+            <h1><span id="temp">&mdash;</span><sup>&deg;C</sup></h1>
         </div>
         <table id="weather-details" class="wrapper">
             <tr>
@@ -45,22 +50,22 @@
                     <img src="img/conditions.png" alt="Conditions">
                 </td>
                 <td>
-                    <span>Conditions</span>
-                    Cloudy
+                    <span class="detail-type">Conditions</span>
+                    <span id="conditions">&mdash;</span>
                 </td>
                 <td>
                     <img src="img/wind.png" alt="Wind Speed">
                 </td>
                 <td>
-                    <span>Wind Speed</span>
-                    15 <sup>km/h</sup>
+                    <span class="detail-type">Wind Speed</span>
+                    <span id="wind">&mdash;</span> <sup>km/h</sup>
                 </td>
                 <td>
                     <img src="img/temperature.png" alt="Min/Max Temps">
                 </td>
                 <td>
-                    <span>Temperature Range</span>
-                    -9 <sup>&deg;C</sup> to 5 <sup>&deg;C</sup>
+                    <span class="detail-type">Temperature Range</span>
+                    H:<span id="temp-high">&mdash;</span><sup>&deg;</sup> L:<span id="temp-low">&mdash;</span><sup>&deg;</sup>
                 </td>
             </tr>
             <tr>
@@ -68,22 +73,22 @@
                     <img src="img/visibility.png" alt="Conditions">
                 </td>
                 <td>
-                    <span>Visibility</span>
-                    100 <sup>km</sup>
+                    <span class="detail-type">Visibility</span>
+                    <span id="visibility">&mdash;</span> <sup>km</sup>
                 </td>
                 <td>
                     <img src="img/humidity.png" alt="Wind Speed">
                 </td>
                 <td>
-                    <span>Humidity</span>
-                    64 <sup>%</sup>
+                    <span class="detail-type">Humidity</span>
+                    <span id="humidity">&mdash;</span> <sup>%</sup>
                 </td>
                 <td>
                     <img src="img/pressure.png" alt="Min/Max Temps">
                 </td>
                 <td>
-                    <span>Pressure</span>
-                    1015 <sup>kPa</sup>
+                    <span class="detail-type">Pressure</span>
+                    <span id="pressure">&mdash;</span> <sup>kPa</sup>
                 </td>
             </tr>
         </table>
@@ -94,22 +99,22 @@
             <tr>
                 <td><img src="img/paris.png" alt="Paris Icon"></td>
                 <td>Paris, France</td>
-                <td>11<sup>&deg;C</sup></td>
+                <td><span id="popular-city-1">&mdash;</span><sup>&deg;C</sup></td>
             </tr>
             <tr>
                 <td><img src="img/newyork.png" alt="New York Icon"></td>
                 <td>New York<span>, United States</span></td>
-                <td>12<sup>&deg;C</sup></td>
+                <td><span id="popular-city-2">&mdash;</span><sup>&deg;C</sup></td>
             </tr>
             <tr>
                 <td><img src="img/bangkok.png" alt="Bangkok Icon"></td>
                 <td>Bangkok<span>, Thailand</span></td>
-                <td>28<sup>&deg;C</sup></td>
+                <td><span id="popular-city-3">&mdash;</span><sup>&deg;C</sup></td>
             </tr>
             <tr>
                 <td><img src="img/london.png" alt="London Icon"></td>
                 <td>London<span>, England</span></td>
-                <td>21<sup>&deg;C</sup></td>
+                <td><span id="popular-city-4">&mdash;</span><sup>&deg;C</sup></td>
             </tr>
         </table>
     </div>
